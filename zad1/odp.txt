@@ -1,0 +1,2 @@
+Aplikacja wydrukowała w konsoli komunikat 'new connection' za pomocą  mechanizmu
+nasłuchiwania przypisanego do zdarzenia 'connection' oraz zapytania html
