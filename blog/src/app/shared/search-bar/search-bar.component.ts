@@ -10,7 +10,8 @@ export class SearchBarComponent implements OnInit {
 
   @Output() name = new EventEmitter<string>();
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -19,8 +20,15 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
-  sendFilter() {
-    this.router.navigate(['/'], { queryParams: { name: this.filterText } });
+  sendFilter(): void {
     this.name.emit(this.filterText);
+    this.router.navigate(['/blog'], {
+      queryParams: {
+        name:
+        this.filterText
+      }
+    });
+
+
   }
 }
